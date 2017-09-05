@@ -11,7 +11,13 @@
 /* ************************************************************************** */
 
 #include "filler.h"
-
+/*
+** list of 4 functions to take advantage of specific positions
+** I divide the board in 4 theoretical sectors and each time my center of
+** influence is in the same sector of the opponent center of influence but
+** I have a more centered position, I chose solutions that cut on the sides
+** and try to immediately isolate the opponent making it harder for him put his piece
+*/
 int		ft_fiseason(t_gen *g, t_core *sc, int res)
 {
 	int i;

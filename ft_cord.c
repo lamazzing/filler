@@ -12,6 +12,9 @@
 
 #include "filler.h"
 
+/*
+** computes an area of influence for my player
+*/
 static void	ft_myinfluence(t_gen *g, t_me *me)
 {
 	int i;
@@ -38,6 +41,9 @@ static void	ft_myinfluence(t_gen *g, t_me *me)
 	g->mcy = (g->meny + ((g->mexy - g->meny) / 2));
 }
 
+/*
+** computes an area of influence for the opponent
+*/
 static void	ft_influence(t_gen *g, t_you *you)
 {
 	int i;
@@ -64,6 +70,10 @@ static void	ft_influence(t_gen *g, t_you *you)
 	g->ucy = (g->miny + ((g->maxy - g->miny) / 2));
 }
 
+/*
+** translates the piece in coordinates
+*/
+
 static void	ft_pcscord(t_gen *g, t_pc *pc)
 {
 	int	p;
@@ -81,7 +91,9 @@ static void	ft_pcscord(t_gen *g, t_pc *pc)
 		}
 	}
 }
-
+/*
+** the coordinates of my pieces and the opponent's are saved in two different structures
+*/
 void		ft_cord(t_gen *g, t_me *me, t_you *you, t_pc *pc)
 {
 	int i;

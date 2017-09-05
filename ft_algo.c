@@ -33,7 +33,9 @@ static int	ft_check_piece(t_gen *g, t_pc *pc)
 	}
 	return (ko);
 }
-
+/*
+** ft_check_piece controls if the piece can be placed
+*/
 static void	ft_check_pos(t_gen *g, t_me *me, t_core *sc, t_pc *pc)
 {
 	int p;
@@ -58,7 +60,14 @@ static void	ft_check_pos(t_gen *g, t_me *me, t_core *sc, t_pc *pc)
 		m++;
 	}
 }
-
+/*
+** the first functions are in the file vivaldi.c (based on the 4 seasons :)) and
+** take into account a positional advantage to isolate as soon as possible the opponent
+** player, each "season" function is in charge of one sector.
+** if there's no positional advantage then the sc[].scof score is used, 
+** based on the piece that max the distance from my center of influence 
+** and min the distance from the opponent center of influence.
+*/
 static int	ft_finalgo(t_gen *g, t_core *sc, int res)
 {
 	int	i;
@@ -85,7 +94,12 @@ static int	ft_finalgo(t_gen *g, t_core *sc, int res)
 	}
 	return (res);
 }
-
+/*
+** ft_check_pos: register every available position
+** ft_score: gives a score based on the distance between my piece and the center of influence of the opponent
+** ft_mescore: gives a score based on the distance between my piece and the center of influence of my player
+** If I have a solution I give to the VM the coordinates to put the piece in X and Y
+*/
 void		ft_algo(t_gen *g, t_me *me, t_pc *pc)
 {
 	static t_core	sc[SIZE];

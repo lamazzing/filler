@@ -12,6 +12,10 @@
 
 #include "filler.h"
 
+/*
+** score for a piece based on the min distance with the opponent influence
+** and max distance with my influence
+*/
 int		ft_fscore(t_gen *g, t_core *sc)
 {
 	int i;
@@ -24,6 +28,9 @@ int		ft_fscore(t_gen *g, t_core *sc)
 	}
 	return (1);
 }
+/*
+** score for a piece based on his distance with the my influence
+*/
 
 int		ft_mescore(t_gen *g, t_core *sc)
 {
@@ -43,7 +50,9 @@ int		ft_mescore(t_gen *g, t_core *sc)
 	}
 	return (1);
 }
-
+/*
+** score for a piece based on his distance with the opponent influence
+*/
 int		ft_score(t_gen *g, t_core *sc)
 {
 	int i;

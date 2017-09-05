@@ -82,7 +82,15 @@ static void	ft_readp(t_gen *g)
 			ft_fline(g);
 	}
 }
-
+/*
+** ft_playernum: check if first or second player
+** ft_readmap: read and register the map updated with the opposite player piece
+** ft_readp: read the piece provided that has to be placed
+** ft_cord: register the coordinates of the pieces placed for me and for my opponent and 
+** compute the center of influence for both players
+** ft_algo: check available positions to put the piece and give a score for each 
+** based on some rules explained in the function 
+*/
 int			main(void)
 {
 	t_gen	g[1];
